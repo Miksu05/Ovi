@@ -1,0 +1,36 @@
+using System;
+
+Oventilanne oventilanneNyt = Oventilanne.Lukossa;
+
+string Komento;
+
+
+while (true)
+{
+Console.Write($"Ovi on {oventilanneNyt}. Mitä haluat tehdä?");
+Komento = Console.ReadLine();
+
+
+
+    if( oventilanneNyt == Oventilanne.Lukossa && Komento == "poista lukitus")
+    {
+        oventilanneNyt = Oventilanne.Kiini;
+    }
+    if( oventilanneNyt == Oventilanne.Kiini && Komento == "avaa")
+    {
+        oventilanneNyt = Oventilanne.Auki;
+    }
+    if (oventilanneNyt == Oventilanne.Auki && Komento == "Sulje")
+    {
+        oventilanneNyt = Oventilanne.Kiini;
+    }
+    if (oventilanneNyt == Oventilanne.Kiini && Komento == "Lukitse")
+    {
+        oventilanneNyt = Oventilanne.Lukossa;
+    }
+
+}
+
+
+
+enum Oventilanne { Lukossa, Kiini, Auki };
